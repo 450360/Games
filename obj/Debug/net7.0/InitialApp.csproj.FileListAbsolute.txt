@@ -1,0 +1,15 @@
+/home/nikita/Projects/Public/InitialApp/bin/Debug/net7.0/InitialApp
+/home/nikita/Projects/Public/InitialApp/bin/Debug/net7.0/InitialApp.deps.json
+/home/nikita/Projects/Public/InitialApp/bin/Debug/net7.0/InitialApp.runtimeconfig.json
+/home/nikita/Projects/Public/InitialApp/bin/Debug/net7.0/InitialApp.dll
+/home/nikita/Projects/Public/InitialApp/bin/Debug/net7.0/InitialApp.pdb
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/InitialApp.csproj.AssemblyReference.cache
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/InitialApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/InitialApp.AssemblyInfoInputs.cache
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/InitialApp.AssemblyInfo.cs
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/InitialApp.csproj.CoreCompileInputs.cache
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/InitialApp.dll
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/refint/InitialApp.dll
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/InitialApp.pdb
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/InitialApp.genruntimeconfig.cache
+/home/nikita/Projects/Public/InitialApp/obj/Debug/net7.0/ref/InitialApp.dll
