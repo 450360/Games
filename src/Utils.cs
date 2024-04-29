@@ -1,8 +1,13 @@
 namespace InitialApp
 {
+   /// <summary>
+   /// Useful methods for all cases
+   /// </summary>
    public static partial class Utils
    {
-      public static int GetFullYears(DateTime date)
+      private static Random _rnd = new Random();
+
+      public static int FullYears(DateTime date)
       {
          DateTime current = DateTime.Today;
          int result = current.Year - date.Year;
@@ -11,6 +16,19 @@ namespace InitialApp
          bool sameDay_or_overDay = current.Day >= date.Day;
          if (overMonth || (sameMonth && sameDay_or_overDay)) return result;
          return result - 1;
+      }
+
+      public static DateTime RandomDate(DateTime max)
+      {
+         int year = _rnd.Next(0, max.Year);
+         int month = _rnd.Next(1, 13);
+         int day = _rnd.Next(1, DateTime.DaysInMonth(year, month) + 1);
+         if (year == max.Year && month > max.Month)
+         {
+            month = max.Month;
+            if (day > max.Day) day = max.Day;
+         }
+         return new DateTime(year, month, day);
       }
    }
 }

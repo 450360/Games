@@ -6,13 +6,18 @@ namespace InitialApp
    {
       public static void Main(string[] args)
       {
-         Person person = new Person("Nikita", "Fokin", new DateTime(1991, 10, 28), 'M');
-         person.SayHello();
-         person.AskName();
-         person.AskMonthOfBirth();
+         //generate 2 random persons who born in 1997
 
-         PersonAge personAge = new PersonAge(person);
-         personAge.AskAge();
+         PersonGenOptions options = new PersonGenOptions();
+         options.birthDate = new DateTime(1997, 1, 1).RandomMonth().RandomDay();
+         Person p1 = Services.personGenerator.Create(options);
+         System.Console.WriteLine(p1);
+
+         System.Console.WriteLine("------------");
+
+         options.birthDate = new DateTime(1997, 1, 1).RandomMonth().RandomDay();
+         Person p2 = Services.personGenerator.Create(options);
+         System.Console.WriteLine(p2);
       }
    }
 }

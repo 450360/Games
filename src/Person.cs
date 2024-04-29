@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace InitialApp
 {
    /// <summary>
@@ -35,5 +37,16 @@ namespace InitialApp
       {
          Services.msgOutput.Print($"I was born in {(Months)birthDate.Month}.");
       }
+
+      public override string ToString()
+      {
+         StringBuilder result = new StringBuilder();
+         result.Append($"name: {name}\n");
+         result.Append($"surname: {surname}\n");
+         result.Append($"birthDate: {birthDate}\n");
+         result.Append($"sex: {sex}");
+         return result.ToString();
+      }
+
    }
 }

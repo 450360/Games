@@ -8,7 +8,7 @@ namespace InitialApp
    {
       /* ---------------------------------- props --------------------------------- */
       public Person person { get; private set; }
-      public int age => Utils.GetFullYears(this.person.birthDate);
+      public int age => Utils.FullYears(this.person.birthDate);
 
       /* ---------------------------------- init ---------------------------------- */
       public PersonAge(Person person)
