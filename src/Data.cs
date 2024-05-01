@@ -23,16 +23,16 @@ namespace InitialApp
       /* ---------------------------------- init ---------------------------------- */
       public static void Init
       (
-         IList<string> maleNames,
-         IList<string> femaleNames,
-         IList<string> maleSurnames,
-         IList<string> femaleSurnames
+         IList<string> maleNames = null!,
+         IList<string> femaleNames = null!,
+         IList<string> maleSurnames = null!,
+         IList<string> femaleSurnames = null!
       )
       {
-         Data.maleNames = maleNames.AsReadOnly();
-         Data.femaleNames = femaleNames.AsReadOnly();
-         Data.maleSurnames = maleSurnames.AsReadOnly();
-         Data.femaleSurnames = femaleSurnames.AsReadOnly();
+         Data.maleNames = maleNames != null ? maleNames.AsReadOnly() : Data.maleNames;
+         Data.femaleNames = femaleNames != null ? femaleNames.AsReadOnly() : Data.femaleNames;
+         Data.maleSurnames = maleSurnames != null ? maleSurnames.AsReadOnly() : Data.maleSurnames;
+         Data.femaleSurnames = femaleSurnames != null ? femaleSurnames.AsReadOnly() : Data.femaleSurnames;
       }
    }
 }

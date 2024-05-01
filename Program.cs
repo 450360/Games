@@ -6,18 +6,21 @@ namespace InitialApp
    {
       public static void Main(string[] args)
       {
-         //generate 2 random persons who born in 1997
+         //use custom data for creating 10 random persons
+
+         TxtDataReader dataReader = new TxtDataReader();
+         IList<string> maleNames = dataReader.Read("data/male_names.txt");
+         Data.Init(maleNames: maleNames);
 
          PersonGenOptions options = new PersonGenOptions();
-         options.birthDate = new DateTime(1997, 1, 1).RandomMonth().RandomDay();
-         Person p1 = Services.personGenerator.Create(options);
-         System.Console.WriteLine(p1);
-
-         System.Console.WriteLine("------------");
-
-         options.birthDate = new DateTime(1997, 1, 1).RandomMonth().RandomDay();
-         Person p2 = Services.personGenerator.Create(options);
-         System.Console.WriteLine(p2);
+         options.sex = 'M';
+         for (int i = 0; i < 10; i++)
+         {
+            options.birthDate = new DateTime(1997, 1, 1).RandomMonth().RandomDay();
+            Person p = Services.personGenerator.Create(options);
+            System.Console.WriteLine(p);
+            System.Console.WriteLine("------------");
+         }
       }
    }
 }
