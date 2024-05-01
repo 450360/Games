@@ -6,20 +6,24 @@ namespace InitialApp
    {
       public static void Main(string[] args)
       {
-         //use custom data for creating 10 random persons
+         //download data from website
+         Utils.UpdateData();
 
-         TxtDataReader dataReader = new TxtDataReader();
-         IList<string> maleNames = dataReader.Read("data/male_names.txt");
-         Data.Init(maleNames: maleNames);
+         // init data
+         IDataReader dataReader = new TxtDataReader();
+         Data.Init
+         (
+            maleNames: dataReader.Read("data/male_names.txt"),
+            femaleNames: dataReader.Read("data/female_names.txt"),
+            maleSurnames: dataReader.Read("data/surnames.txt"),
+            femaleSurnames: dataReader.Read("data/surnames.txt")
+         );
 
-         PersonGenOptions options = new PersonGenOptions();
-         options.sex = 'M';
+         // generate 10 random persons
          for (int i = 0; i < 10; i++)
          {
-            options.birthDate = new DateTime(1997, 1, 1).RandomMonth().RandomDay();
-            Person p = Services.personGenerator.Create(options);
-            System.Console.WriteLine(p);
-            System.Console.WriteLine("------------");
+            System.Console.WriteLine(Services.personGenerator.Create());
+            System.Console.WriteLine("----------");
          }
       }
    }

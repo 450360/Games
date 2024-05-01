@@ -30,5 +30,13 @@ namespace InitialApp
          }
          return new DateTime(year, month, day);
       }
+
+      public static void UpdateData()
+      {
+         IDataReader dataReader = new WebDataReader();
+         dataReader.Read("https://names.mongabay.com/male_names.htm").WriteAs("data/male_names.txt");
+         dataReader.Read("https://names.mongabay.com/female_names.htm").WriteAs("data/female_names.txt");
+         dataReader.Read("https://names.mongabay.com/most_common_surnames.htm").WriteAs("data/surnames.txt");
+      }
    }
 }
