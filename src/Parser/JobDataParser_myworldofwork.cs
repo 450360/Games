@@ -1,10 +1,8 @@
-
-using AngleSharp.Dom;
 using AngleSharp.Html.Parser;
 
 namespace InitialApp
 {
-   public class NameDataParser : IDataParser
+   public class JobDataParser_myworldofwork : IDataParser
    {
       public IEnumerable<string> Parse(string url)
       {
@@ -14,9 +12,11 @@ namespace InitialApp
             html = client.GetStringAsync(url).Result;
          }
 
-         HtmlParser parser = new HtmlParser();
-         IDocument document = parser.ParseDocument(html);
-         return document.QuerySelectorAll("tr").Select(x => x.FirstElementChild!.TextContent.Capitalize()).Skip(1);
+         return new HtmlParser()
+         .ParseDocument(html)
+         .QuerySelectorAll("div")
+         .Where(x => x.ClassName == "job-profile")
+         .Select(x => x.FirstElementChild!.TextContent.Trim());
       }
    }
 }

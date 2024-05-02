@@ -37,6 +37,8 @@ namespace InitialApp
          dataReader.Read("https://names.mongabay.com/male_names.htm").WriteAs("data/male_names.txt");
          dataReader.Read("https://names.mongabay.com/female_names.htm").WriteAs("data/female_names.txt");
          dataReader.Read("https://names.mongabay.com/most_common_surnames.htm").WriteAs("data/surnames.txt");
+         //dataReader.Read("https://www.4cornerresources.com/job-descriptions/").WriteAs("data/jobs.txt");
+         dataReader.Read("https://www.myworldofwork.co.uk/my-career-options/job-categories").WriteAs("data/jobs.txt");
       }
    }
 }

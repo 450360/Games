@@ -1,6 +1,6 @@
 namespace InitialApp
 {
-   public interface IParser
+   public interface IDataParser
    {
       IEnumerable<string> Parse(string url);
    }
